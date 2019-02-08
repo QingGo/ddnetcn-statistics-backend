@@ -1,5 +1,8 @@
 ## ddnet国服2018年统计数据
 
+体验地址:
+* http://119.23.222.43:8080/
+
 to-do list：
 * 去重后的新增的分数和国服相应排名，原排名，现排名
 * 最常玩的图，排名？
@@ -16,11 +19,13 @@ to-do list：
 * 下载游戏过图sql文件
 * wget https://ddnet.tw/stats/ddnet-sql.zip
 * unzip ddnet-sql.zip
+* cd ddnet-sql
 * 安装mysql或mariadb，root用户登录：
 * create database ddnet;
-* CREATE USER 'ddnet'@'%' IDENTIFIED BY 'ddnet';
-* GRANT ALL PRIVILEGES ON ddnet.* TO 'ddnet'@'%';
+* CREATE USER 'ddnet'@'localhost' IDENTIFIED BY 'ddnet';
+* GRANT ALL PRIVILEGES ON ddnet.* TO 'ddnet'@'localhost';
 * FLUSH PRIVILEGES;
+* use ddnet;
 * source record_teamrace.sql;
 * source record_maps.sql;
 * source record_race.sql;
@@ -28,8 +33,9 @@ to-do list：
 * 安装go的依赖：
 * go get github.com/gin-gonic/gin
 * go get github.com/go-sql-driver/mysql
+* git clone https://github.com/QingGo/ddnetcn-statistics-backend.git
 * 进入代码目录，试运行：
 * go run main.go
 * 实际运行：
 * go build main.go
-* nohup ./main >> web.lob 2>&1 &
+* nohup ./main >> web.log 2>&1 &
