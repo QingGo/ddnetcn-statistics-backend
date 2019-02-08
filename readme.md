@@ -13,23 +13,23 @@ to-do list：
 * 测试，ci持续集成
 
 部署笔记
-下载游戏过图sql文件
-wget https://ddnet.tw/stats/ddnet-sql.zip
-unzip ddnet-sql.zip
-安装mysql或mariadb，root用户登录：
-create database ddnet;
-CREATE USER 'ddnet'@'%' IDENTIFIED BY 'ddnet';
-GRANT ALL PRIVILEGES ON ddnet.* TO 'ddnet'@'%';
-FLUSH PRIVILEGES;
-source record_teamrace.sql;
-source record_maps.sql;
-source record_race.sql;
-安装go，
-安装go的依赖：
-go get github.com/gin-gonic/gin
-go get github.com/go-sql-driver/mysql
-进入代码目录，试运行：
-go run main.go
-实际运行：
-go build main.go
-nohup ./main >> web.lob 2>&1 &
+* 下载游戏过图sql文件
+* wget https://ddnet.tw/stats/ddnet-sql.zip
+* unzip ddnet-sql.zip
+* 安装mysql或mariadb，root用户登录：
+* create database ddnet;
+* CREATE USER 'ddnet'@'%' IDENTIFIED BY 'ddnet';
+* GRANT ALL PRIVILEGES ON ddnet.* TO 'ddnet'@'%';
+* FLUSH PRIVILEGES;
+* source record_teamrace.sql;
+* source record_maps.sql;
+* source record_race.sql;
+* 安装go，
+* 安装go的依赖：
+* go get github.com/gin-gonic/gin
+* go get github.com/go-sql-driver/mysql
+* 进入代码目录，试运行：
+* go run main.go
+* 实际运行：
+* go build main.go
+* nohup ./main >> web.lob 2>&1 &
